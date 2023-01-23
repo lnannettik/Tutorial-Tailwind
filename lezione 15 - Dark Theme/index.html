@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Aggiunto class="dark" qua sotto per lavorare la dark mode legata alle classi -->
+<!-- eliminare la classe dark per vedere il comportamento dell'ultimo esempio -->
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Dark Mode legato alle classi -->
+    <script>
+
+        tailwind.config = {
+            darkMode: 'class'
+        }
+
+    </script>
+
+
+    <title>Tutorial Tailwind: lezione 15</title>    
+
+</head>
+    
+<!-- Dark Mode legato alle preferenze del sistema operativo -->
+<body class="p-10 bg-white text-gray-600 dark:bg-slate-800 dark:text-gray-400 dark:lg:hover:bg-black">
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit iure consequatur assumenda, quos at pariatur beatae unde debitis blanditiis, quam in sit similique molestiae, eligendi magnam ea fugiat! Quis harum eaque quisquam nesciunt expedita doloremque nihil quibusdam, est quia modi possimus itaque obcaecati libero soluta? Placeat sapiente iste optio officia consequatur atque nesciunt nihil voluptas architecto vero excepturi, odit, nulla nisi reprehenderit aliquid. Corporis repellendus accusamus placeat doloribus optio, rerum quas dicta fuga totam cum sed minus praesentium ex a vero, qui, molestiae ullam animi quis! Natus eligendi fuga cumque maiores laboriosam? Ad quibusdam alias expedita odio sunt aspernatur?
+    <br>
+
+    <button id="bottone" class="bg-sky-500 text-white p-3 dark:bg-teal-500 mt-6 rounded-sm">Cambia Tema</button>
+
+    <script>
+        // prendo il bottone
+        const bottone = document.getElementById("bottone")
+
+        // associo l'evento click
+        bottone.addEventListener("click", () => {
+
+            // creo la const temaAttuale che legge la classList di documentElement (che è poi tutto il DOM)
+            const temaAttuale = document.documentElement.classList[0]
+            // mostrami il valore assunto da temaAttuale in console
+            console.log(temaAttuale)
+
+
+            // SE temaAttuale = dark
+            // ALLORA rimuovi 'dark'
+            // ALTRIMENTI aggiungi 'dark'
+
+            // if (temaAttuale == 'dark') {
+            //     document.documentElement.classList.remove('dark')
+            // } else {
+            //     document.documentElement.classList.add('dark')
+            // }
+
+            // PER SALVARE LE PREFERENZE DELL'UTENTE NEL LOCAL STORAGE (eliminare la classe 'dark' in alto)
+
+            if (temaAttuale == 'dark') {
+                document.documentElement.classList.remove('dark')
+                localStorage.setItem('theme', 'light')
+            } else {
+                document.documentElement.classList.add('dark')
+                localStorage.setItem('theme', 'dark')
+
+            }
+
+        })
+
+        if (localStorage.getItem('theme') && localStorage.getItem('theme') == 'dark'){
+            document.documentElement.classList.add('dark')
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>

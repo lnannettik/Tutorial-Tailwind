@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Tutorial Tailwind: lezione 16</title>    
+
+</head>
+    
+<body>
+
+    <div class="m-20 p-10 bg-white shadow-2xl"></div>
+
+    <div class="m-20 p-10 bg-white shadow-2xl shadow-indigo-600"></div>
+    
+    <div class="m-20 p-10 bg-white shadow-inner shadow-teal-600"></div>
+   
+    <div class="m-10 p-10 bg-black opacity-10"></div>
+    <div class="m-10 p-10 bg-black opacity-50"></div>
+    <div class="m-10 p-10 bg-black opacity-90"></div>
+
+    <div class="m-10 p-10 bg-black/20 text-sm">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequuntur quasi fugiat assumenda sed quia, pariatur cumque eos ut commodi mollitia magnam quam itaque exercitationem sequi fuga? Corrupti quam autem illum suscipit fugiat repellat incidunt aut, error quae laudantium aliquid minus totam, velit excepturi tempore sapiente molestias adipisci porro consequuntur.</p>
+    </div>
+
+    <div class="m-10 p-10 bg-black opacity-20 text-sm text-white">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequuntur quasi fugiat assumenda sed quia, pariatur cumque eos ut commodi mollitia magnam quam itaque exercitationem sequi fuga? Corrupti quam autem illum suscipit fugiat repellat incidunt aut, error quae laudantium aliquid minus totam, velit excepturi tempore sapiente molestias adipisci porro consequuntur.</p>
+    </div>
+
+    <!-- il primo div rimane sotto al secondo -->
+    <div class="flex justify-center -space-x-10">
+        <div class="my-10 p-10 bg-teal-300"></div>
+        <div class="my-10 p-10 bg-blue-300"></div>
+    </div>
+
+    <!-- blend mode (mischia i colori dei div sovraposti)-->
+    <div class="flex justify-center -space-x-28">
+        <div class="my-10 p-10 bg-yellow-400"></div>
+        <div class="my-10 p-10 mix-blend-overlay bg-blue-400"></div>
+    </div>
+
+    <!-- blend con bg-image -->
+    <h3 class="mx-20 mt-20 text-center">blend con bg-image</h3>
+    <div class="mx-20 mt-10 h-[400px] bg-red-400 bg-cover bg-blend-hard-light" style="background-image: url('pdor.jpeg')"></div>
+    <div class="mx-20 mt-10 h-[400px] bg-red-400 bg-cover bg-blend-multiply" style="background-image: url('pdor.jpeg')"></div>
+    <div class="mx-20 mt-10 h-[400px] bg-red-400 bg-cover bg-blend-soft-light" style="background-image: url('pdor.jpeg')"></div>
+
+    <!-- contrasto -->
+    <h3 class="mx-20 mt-20 text-center">contrasto</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 contrast-[.55]">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 contrast-50">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 contrast-100">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 contrast-150">
+
+    <!-- bianco e nero -->
+    <h3 class="mx-20 mt-20 text-center">bianco e nero</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 grayscale">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 grayscale-[.55]">
+
+    <!-- ruotare i colori -->
+    <h3 class="mx-20 mt-20 text-center">ruotare i colori</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 hue-rotate-15">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 hue-rotate-60">
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 hue-rotate-180">
+
+    <!-- altri filtri -->
+    <h3 class="mx-20 mt-20 text-center">invert</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 invert">
+
+    <h3 class="mx-20 mt-20 text-center">sepia</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 sepia">
+
+    <h3 class="mx-20 mt-20 text-center">saturate-150</h3>
+    <img src="pdor.jpeg" alt="" class="mx-20 mt-10 saturate-150">
+
+    <!-- drop-shadow -->
+    <div class="m-20 p-20 bg-white drop-shadow-2xl"></div>
+
+    <!-- backdrop -->
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 backdrop-blur-sm"></div>
+    </div>    
+
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 backdrop-blur-md"></div>
+    </div>    
+
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 blur"></div>
+    </div>    
+
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 backdrop-hue-rotate-180"></div>
+    </div>    
+
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 backdrop-saturate-100"></div>
+    </div>    
+
+    <div class="m-20 h-64 bg-cover flex justify-center items-center" style="background-image: url('pdor.jpeg');">
+        <div class="h-40 w-40 bg-white/30 backdrop-opacity-10"></div>
+    </div>    
+
+
+
+
+
+
+</body>
+
+</html>
